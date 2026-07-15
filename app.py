@@ -404,7 +404,7 @@ def render_history() -> None:  # noqa: C901
           .sort_index(ascending=False)
     )
     pivot.index = pivot.index.strftime("%Y-%m-%d %H:%M")
-    pivot = pivot.applymap(lambda v: REGIME_EMOJI.get(str(v).lower(), v) if pd.notna(v) else "—")
+    pivot = pivot.map(lambda v: REGIME_EMOJI.get(str(v).lower(), v) if pd.notna(v) else "—")
     st.dataframe(pivot, use_container_width=True)
 
 
