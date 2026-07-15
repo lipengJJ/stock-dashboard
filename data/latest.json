@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-07-16T09:00:00",
+  "expiry": "2026-09-18",
+  "tickers": {
+    "KO": {
+      "quote": {
+        "price": 83.03,
+        "change": -0.06,
+        "change_pct": -0.07,
+        "volume": 3391041,
+        "updated": "2026-07-15 15:20"
+      },
+      "gex": {
+        "spot": 83.07,
+        "expiry": "2026-09-18",
+        "net_gex": 22870000,
+        "flip_level": 78.45,
+        "max_gamma_strike": 82.5,
+        "call_wall": 82.5,
+        "put_wall": 77.5,
+        "put_call_oi": 0.17,
+        "put_call_vol": 1.70,
+        "regime": "long",
+        "strikes": [
+          {"strike": 75.0,  "call_gex":  434000, "put_gex":  -836000, "total_gex":  -403000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 77.5,  "call_gex":  636000, "put_gex": -1060000, "total_gex":  -428000, "call_wall": false, "put_wall": true,  "max_gamma": false},
+          {"strike": 80.0,  "call_gex": 1730000, "put_gex": -1030000, "total_gex":   694000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 82.5,  "call_gex": 7850000, "put_gex":  -486000, "total_gex":  7360000, "call_wall": true,  "put_wall": false, "max_gamma": true},
+          {"strike": 85.0,  "call_gex": 6980000, "put_gex":  -234000, "total_gex":  6740000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 87.5,  "call_gex": 5360000, "put_gex":    -8000, "total_gex":  5360000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 90.0,  "call_gex": 3560000, "put_gex":   -23000, "total_gex":  3540000, "call_wall": false, "put_wall": false, "max_gamma": false}
+        ]
+      },
+      "dex": {
+        "net_dex": 202730000,
+        "top_positive": 82.5,
+        "top_negative": null,
+        "strikes": [
+          {"strike": 75.0,  "call_dex":  12580000, "put_dex":  -4270000, "total_dex":   8310000},
+          {"strike": 77.5,  "call_dex":  12180000, "put_dex":  -6110000, "total_dex":   6070000},
+          {"strike": 80.0,  "call_dex":  22260000, "put_dex":  -6880000, "total_dex":  15380000},
+          {"strike": 82.5,  "call_dex":  70780000, "put_dex":  -3990000, "total_dex":  66790000},
+          {"strike": 85.0,  "call_dex":  56650000, "put_dex":  -2820000, "total_dex":  53830000},
+          {"strike": 87.5,  "call_dex":  34210000, "put_dex":   -124000, "total_dex":  34090000},
+          {"strike": 90.0,  "call_dex":  18800000, "put_dex":   -522000, "total_dex":  18280000}
+        ]
+      },
+      "setup": "**机构行为解读**\n\nP/C OI 比仅 **0.17**，Call OI 是 Put 的近 6 倍，机构大量买入 $82.50–$90 区间 Call。**现价 $83.03 已轻微突破 Call Wall $82.50**，做市商需在上方卖出对冲，形成天然阻力。P/C 成交量 1.70 显示 Put 活跃，是机构对正股仓位做**保护性对冲（Protective Put）**，非看空信号。\n\n📌 **结论**：多头格局稳固，短期在 $82.50–$83 磨顶，方向突破后目标 $85–$87.50。Gamma Flip $78.45 是制度转变关键位，跌破需止损。"
+    },
+    "QQQ": {
+      "quote": {
+        "price": 715.15,
+        "change": -4.54,
+        "change_pct": -0.63,
+        "volume": 11837298,
+        "updated": "2026-07-15 15:20"
+      },
+      "gex": {
+        "spot": 713.88,
+        "expiry": "2026-09-18",
+        "net_gex": 4810000,
+        "flip_level": 714.10,
+        "max_gamma_strike": 700.0,
+        "call_wall": 710.0,
+        "put_wall": 700.0,
+        "put_call_oi": 1.01,
+        "put_call_vol": 0.99,
+        "regime": "mixed",
+        "strikes": [
+          {"strike": 680.0, "call_gex":  3740000, "put_gex":  -4400000, "total_gex":   -654000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 685.0, "call_gex":  3350000, "put_gex":  -3090000, "total_gex":    257000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 690.0, "call_gex":  5040000, "put_gex":  -6220000, "total_gex":  -1180000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 695.0, "call_gex":   644000, "put_gex":   -838000, "total_gex":   -194000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 700.0, "call_gex":  6230000, "put_gex": -22700000, "total_gex": -16470000, "call_wall": false, "put_wall": true,  "max_gamma": true},
+          {"strike": 705.0, "call_gex":  1650000, "put_gex":  -2280000, "total_gex":   -630000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 710.0, "call_gex": 12350000, "put_gex":  -3430000, "total_gex":   8920000, "call_wall": true,  "put_wall": false, "max_gamma": false},
+          {"strike": 715.0, "call_gex":  2000000, "put_gex":  -3950000, "total_gex":  -1950000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 720.0, "call_gex":  4170000, "put_gex":  -2340000, "total_gex":   1830000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 725.0, "call_gex":  2610000, "put_gex":  -1440000, "total_gex":   1160000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 730.0, "call_gex":  3550000, "put_gex":  -1460000, "total_gex":   2090000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 740.0, "call_gex":  5190000, "put_gex":  -1110000, "total_gex":   4080000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 750.0, "call_gex":  5940000, "put_gex":  -1390000, "total_gex":   4550000, "call_wall": false, "put_wall": false, "max_gamma": false}
+        ]
+      },
+      "dex": {
+        "net_dex": 3600000000,
+        "top_positive": 710.0,
+        "top_negative": 700.0,
+        "strikes": [
+          {"strike": 680.0, "call_dex":  522010000, "put_dex": -266580000, "total_dex":  255430000},
+          {"strike": 685.0, "call_dex":  452230000, "put_dex": -201660000, "total_dex":  250580000},
+          {"strike": 690.0, "call_dex":  656160000, "put_dex": -433810000, "total_dex":  222350000},
+          {"strike": 695.0, "call_dex":   80790000, "put_dex":  -62690000, "total_dex":   18100000},
+          {"strike": 700.0, "call_dex":  748550000, "put_dex":-1820000000, "total_dex":-1070000000},
+          {"strike": 705.0, "call_dex":  157970000, "put_dex": -162320000, "total_dex":   -4360000},
+          {"strike": 710.0, "call_dex": 1120000000, "put_dex": -259920000, "total_dex":  861950000},
+          {"strike": 715.0, "call_dex":  171730000, "put_dex": -319430000, "total_dex": -147700000},
+          {"strike": 720.0, "call_dex":  411420000, "put_dex": -237140000, "total_dex":  174280000},
+          {"strike": 725.0, "call_dex":  243340000, "put_dex": -154050000, "total_dex":   89290000},
+          {"strike": 730.0, "call_dex":  311950000, "put_dex": -163840000, "total_dex":  148110000},
+          {"strike": 740.0, "call_dex":  398560000, "put_dex": -137510000, "total_dex":  261040000},
+          {"strike": 750.0, "call_dex":  389490000, "put_dex": -186900000, "total_dex":  202590000}
+        ]
+      },
+      "setup": "**⚡ 临界预警**\n\nGamma Flip 处于 **$714.10**，现价 $715.15 仅高出 **$1.05（0.03%）**。任何小幅回调都可能将 QQQ 推入 Short Gamma 制度，做市商对冲行为会放大下跌。\n\nP/C OI = **1.01**，完全对称——机构对 QQQ 走向存在明显分歧，或部分机构在做**领口策略（Collar）**：买股票 + 买 Put $700 + 卖 Call $710。**$700 的 -16.47M GEX 是绝对 Put Wall**，做市商会在此大量买入托底。\n\n📌 **结论**：Gamma Flip $714.10 是今日最关键观察指标。守住 = 慢牛延续；跌破 = Short Gamma 制度，下跌加速至 $700–$705。"
+    },
+    "SPY": {
+      "quote": {
+        "price": 752.98,
+        "change": 1.15,
+        "change_pct": 0.15,
+        "volume": 12325041,
+        "updated": "2026-07-15 15:20"
+      },
+      "gex": {
+        "spot": 752.61,
+        "expiry": "2026-09-18",
+        "net_gex": 72910000,
+        "flip_level": 752.03,
+        "max_gamma_strike": 750.0,
+        "call_wall": 750.0,
+        "put_wall": 710.0,
+        "put_call_oi": 0.66,
+        "put_call_vol": 1.51,
+        "regime": "long",
+        "strikes": [
+          {"strike": 745.0, "call_gex": 11420000, "put_gex":  -2850000, "total_gex":   8570000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 746.0, "call_gex":   247000, "put_gex":  -1010000, "total_gex":   -762000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 747.0, "call_gex":   748000, "put_gex":  -1310000, "total_gex":   -566000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 748.0, "call_gex":   666000, "put_gex":   -461000, "total_gex":    205000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 749.0, "call_gex":   809000, "put_gex":   -543000, "total_gex":    266000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 750.0, "call_gex": 25160000, "put_gex": -13720000, "total_gex":  11430000, "call_wall": true,  "put_wall": false, "max_gamma": true},
+          {"strike": 752.0, "call_gex":   577000, "put_gex":   -568000, "total_gex":      9000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 753.0, "call_gex":   417000, "put_gex":   -715000, "total_gex":   -298000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 755.0, "call_gex": 10640000, "put_gex":  -3900000, "total_gex":   6740000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 757.0, "call_gex":   781000, "put_gex":   -234000, "total_gex":    547000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 760.0, "call_gex":  8530000, "put_gex":  -4580000, "total_gex":   3950000, "call_wall": false, "put_wall": false, "max_gamma": false}
+        ]
+      },
+      "dex": {
+        "net_dex": 6520000000,
+        "top_positive": 730.0,
+        "top_negative": 709.0,
+        "strikes": [
+          {"strike": 745.0, "call_dex":  734870000, "put_dex": -133080000, "total_dex":  601790000},
+          {"strike": 748.0, "call_dex":   40910000, "put_dex":  -22910000, "total_dex":   18000000},
+          {"strike": 749.0, "call_dex":   48880000, "put_dex":  -27520000, "total_dex":   21360000},
+          {"strike": 750.0, "call_dex": 1340000000, "put_dex": -639500000, "total_dex":  703830000},
+          {"strike": 752.0, "call_dex":   29730000, "put_dex":  -27560000, "total_dex":    2170000},
+          {"strike": 753.0, "call_dex":   21060000, "put_dex":  -35390000, "total_dex":  -14340000},
+          {"strike": 755.0, "call_dex":  516020000, "put_dex": -201050000, "total_dex":  314980000},
+          {"strike": 757.0, "call_dex":   36250000, "put_dex":  -12550000, "total_dex":   23700000},
+          {"strike": 760.0, "call_dex":  484000000, "put_dex": -312390000, "total_dex":  171610000}
+        ]
+      },
+      "setup": "**✅ 结构最强信号**\n\nSPY Net GEX **+72.91M**，是三者中最强的 Long Gamma 结构。现价 $752.98 已突破 Call Wall $750，突破幅度稳固（+$2.98）。\n\nP/C OI **0.66**（Call 多于 Put 50%）机构方向性偏多，无大规模对冲迹象。$750 的 11.43M GEX 和 $1.34B DEX 是超大集中点，突破代表机构认可新价格锚点。\n\nP/C 成交量 1.51，Put 活跃是大型机构对正股多头做**尾部风险对冲**，不是看空信号。\n\n📌 **结论**：SPY 是最适合持多的市场环境，向上慢牛格局。Gamma Flip $752.03 是唯一需要守住的关键位，守住目标 $760–$780，跌破减仓。"
+    }
+  }
+}
