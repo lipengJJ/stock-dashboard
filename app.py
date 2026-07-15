@@ -21,7 +21,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-DATA_FILE = Path(__file__).parent / "data" / "latest.json"
+DATA_FILE    = Path(__file__).parent / "data" / "latest.json"
+HISTORY_DIR  = Path(__file__).parent / "data" / "history"
 
 TICKER_NAMES = {
     "KO":  "可口可乐 Coca-Cola",
@@ -43,6 +44,36 @@ def load_data() -> dict:
         return {}
     with open(DATA_FILE, encoding="utf-8") as f:
         return json.load(f)
+
+
+@st.cache_data(ttl=1800)
+def load_history() -> list[dict]:
+    if not HISTORY_DIR.exists():
+        return []
+    rows = []
+    for f in sorted(HISTORY_DIR.glob("*.json")):
+        try:
+            with open(f, encoding="utf-8") as fh:
+                snap = json.load(fh)
+            ts_str = snap.get("generated_at", "")
+            try:
+                dt = datetime.fromisoformat(ts_str)
+            except Exception:
+                continue
+            for ticker, td in snap.get("tickers", {}).items():
+                quote = td.get("quote", {})
+                gex   = td.get("gex",   {})
+                rows.append({
+                    "time":       dt,
+                    "ticker":     ticker,
+                    "price":      quote.get("price") or gex.get("spot"),
+                    "net_gex":    gex.get("net_gex"),
+                    "flip_level": gex.get("flip_level"),
+                    "regime":     gex.get("regime", "mixed"),
+                })
+        except Exception:
+            continue
+    return rows
 
 
 def regime_label(gex: dict) -> tuple[str, str, str]:
@@ -317,6 +348,66 @@ def render_ticker(ticker: str, data: dict) -> None:
                 st.markdown(f"- 止损参考：**${flip:.2f}**")
 
 
+# ── 历史趋势 ──────────────────────────────────────────────────────────────────
+def render_history() -> None:  # noqa: C901
+    rows = load_history()
+    if len(rows) < 2:
+        st.info("历史数据不足 2 条，待下次运行后累积。每次执行 stock-dashboard-update 自动追加一条快照。", icon="⏳")
+        return
+
+    df = pd.DataFrame(rows)
+    df["time"] = pd.to_datetime(df["time"])
+    df = df.sort_values("time")
+    tickers = sorted(df["ticker"].unique())
+
+    # ── 价格走势 ──
+    st.markdown("#### 价格走势")
+    fig_price = go.Figure()
+    for t in tickers:
+        tdf = df[df["ticker"] == t].dropna(subset=["price"])
+        fig_price.add_trace(go.Scatter(
+            x=tdf["time"], y=tdf["price"],
+            mode="lines+markers", name=t, line=dict(width=2),
+        ))
+    fig_price.update_layout(
+        plot_bgcolor="#0d1117", paper_bgcolor="#161b22", font_color="#e6edf3",
+        xaxis=dict(color="#8b949e", gridcolor="#30363d"),
+        yaxis=dict(color="#8b949e", gridcolor="#30363d"),
+        legend=dict(bgcolor="#161b22", bordercolor="#30363d"),
+        margin=dict(l=10, r=10, t=10, b=10), height=280,
+    )
+    st.plotly_chart(fig_price, use_container_width=True)
+
+    # ── Net GEX 趋势 ──
+    st.markdown("#### Net GEX 趋势 (M)")
+    fig_gex = go.Figure()
+    for t in tickers:
+        tdf = df[df["ticker"] == t].dropna(subset=["net_gex"])
+        fig_gex.add_trace(go.Bar(
+            x=tdf["time"], y=tdf["net_gex"] / 1e6, name=t,
+        ))
+    fig_gex.update_layout(
+        barmode="group",
+        plot_bgcolor="#0d1117", paper_bgcolor="#161b22", font_color="#e6edf3",
+        xaxis=dict(color="#8b949e", gridcolor="#30363d"),
+        yaxis=dict(title="Net GEX (M)", color="#8b949e", gridcolor="#30363d"),
+        legend=dict(bgcolor="#161b22", bordercolor="#30363d"),
+        margin=dict(l=10, r=10, t=10, b=10), height=260,
+    )
+    st.plotly_chart(fig_gex, use_container_width=True)
+
+    # ── Regime 历史表 ──
+    st.markdown("#### Regime 变化记录")
+    REGIME_EMOJI = {"long": "🟢 Long", "short": "🔴 Short", "mixed": "⚠️ Mixed"}
+    pivot = (
+        df.pivot_table(index="time", columns="ticker", values="regime", aggfunc="last")
+          .sort_index(ascending=False)
+    )
+    pivot.index = pivot.index.strftime("%Y-%m-%d %H:%M")
+    pivot = pivot.applymap(lambda v: REGIME_EMOJI.get(str(v).lower(), v) if pd.notna(v) else "—")
+    st.dataframe(pivot, use_container_width=True)
+
+
 # ── 侧边栏 ───────────────────────────────────────────────────────────────────
 def render_sidebar(data: dict) -> str:
     st.sidebar.title("📊 Stock Dashboard")
@@ -362,42 +453,49 @@ def main() -> None:
 
     selected = render_sidebar(data)
 
-    # 顶部标题
-    st.title(f"📊 {selected} · {TICKER_NAMES.get(selected, '')} 期权结构分析")
-    st.caption(
-        f"GEX / DEX · Dealer Positioning · 到期日 {data.get('expiry', '—')} · "
-        "数据由 Stocks Intelligence MCP 采集"
-    )
+    tab_now, tab_hist = st.tabs(["📊 当前分析", "📈 历史趋势"])
 
-    tickers_data = data.get("tickers", {})
-    ticker_data  = tickers_data.get(selected, {})
-    render_ticker(selected, ticker_data)
+    with tab_now:
+        st.title(f"📊 {selected} · {TICKER_NAMES.get(selected, '')} 期权结构分析")
+        st.caption(
+            f"GEX / DEX · Dealer Positioning · 到期日 {data.get('expiry', '—')} · "
+            "数据由 Stocks Intelligence MCP 采集"
+        )
 
-    # 底部横向概览（所有标的）
-    if len(tickers_data) > 1:
-        st.divider()
-        st.subheader("📋 全标的概览")
-        cols = st.columns(len(tickers_data))
-        for col, (t, td) in zip(cols, tickers_data.items()):
-            with col:
-                q    = td.get("quote", {})
-                gex  = td.get("gex",   {})
-                spot = q.get("price") or gex.get("spot", 0)
-                label, fg, bg = regime_label(gex)
-                chg  = q.get("change_pct", 0)
-                st.markdown(
-                    f"<div style='background:#161b22;border:1px solid #30363d;"
-                    f"border-radius:10px;padding:14px;text-align:center'>"
-                    f"<div style='font-size:16px;font-weight:700'>{t}</div>"
-                    f"<div style='font-size:22px;font-weight:700;margin:4px 0'>"
-                    f"${spot:.2f}</div>"
-                    f"<div style='color:{'#3fb950' if chg>=0 else '#f85149'};font-size:13px'>"
-                    f"{'▲' if chg>=0 else '▼'} {chg:+.2f}%</div>"
-                    f"<div style='margin-top:8px;font-size:11px;background:{bg};"
-                    f"color:{fg};border-radius:12px;padding:3px 8px'>{label}</div>"
-                    f"</div>",
-                    unsafe_allow_html=True,
-                )
+        tickers_data = data.get("tickers", {})
+        ticker_data  = tickers_data.get(selected, {})
+        render_ticker(selected, ticker_data)
+
+        # 底部横向概览（所有标的）
+        if len(tickers_data) > 1:
+            st.divider()
+            st.subheader("📋 全标的概览")
+            cols = st.columns(len(tickers_data))
+            for col, (t, td) in zip(cols, tickers_data.items()):
+                with col:
+                    q    = td.get("quote", {})
+                    gex  = td.get("gex",   {})
+                    spot = q.get("price") or gex.get("spot", 0)
+                    label, fg, bg = regime_label(gex)
+                    chg  = q.get("change_pct", 0)
+                    st.markdown(
+                        f"<div style='background:#161b22;border:1px solid #30363d;"
+                        f"border-radius:10px;padding:14px;text-align:center'>"
+                        f"<div style='font-size:16px;font-weight:700'>{t}</div>"
+                        f"<div style='font-size:22px;font-weight:700;margin:4px 0'>"
+                        f"${spot:.2f}</div>"
+                        f"<div style='color:{'#3fb950' if chg>=0 else '#f85149'};font-size:13px'>"
+                        f"{'▲' if chg>=0 else '▼'} {chg:+.2f}%</div>"
+                        f"<div style='margin-top:8px;font-size:11px;background:{bg};"
+                        f"color:{fg};border-radius:12px;padding:3px 8px'>{label}</div>"
+                        f"</div>",
+                        unsafe_allow_html=True,
+                    )
+
+    with tab_hist:
+        st.title("📈 历史趋势")
+        st.caption("每次运行 stock-dashboard-update 自动追加一条快照，按时间展示价格、GEX 和 Regime 变化")
+        render_history()
 
 
 if __name__ == "__main__":

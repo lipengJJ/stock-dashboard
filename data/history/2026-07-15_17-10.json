@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-07-15T17:10:26Z",
+  "expiry": "2026-09-18",
+  "tickers": {
+    "KO": {
+      "quote": {
+        "price": 83.00,
+        "change": -0.07,
+        "change_pct": -0.09,
+        "volume": 6183873,
+        "updated": "7/15/2026, 5:00:02 PM"
+      },
+      "gex": {
+        "spot": 83.07,
+        "expiry": "2026-09-18",
+        "net_gex": 22870000,
+        "flip_level": 78.45,
+        "max_gamma_strike": 82.5,
+        "call_wall": 82.5,
+        "put_wall": 77.5,
+        "put_call_oi": 0.17,
+        "put_call_vol": 1.70,
+        "regime": "long",
+        "strikes": [
+          {"strike": 75.0,  "call_gex":  434000, "put_gex":  -836000, "total_gex":  -403000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 77.5,  "call_gex":  636000, "put_gex": -1060000, "total_gex":  -428000, "call_wall": false, "put_wall": true,  "max_gamma": false},
+          {"strike": 80.0,  "call_gex": 1730000, "put_gex": -1030000, "total_gex":   694000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 82.5,  "call_gex": 7850000, "put_gex":  -486000, "total_gex":  7360000, "call_wall": true,  "put_wall": false, "max_gamma": true},
+          {"strike": 85.0,  "call_gex": 6980000, "put_gex":  -234000, "total_gex":  6740000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 87.5,  "call_gex": 5360000, "put_gex":    -8000, "total_gex":  5360000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 90.0,  "call_gex": 3560000, "put_gex":   -23000, "total_gex":  3540000, "call_wall": false, "put_wall": false, "max_gamma": false}
+        ]
+      },
+      "dex": {
+        "net_dex": 202730000,
+        "top_positive": 82.5,
+        "top_negative": null,
+        "strikes": [
+          {"strike": 75.0,  "call_dex":  12580000, "put_dex":  -4270000, "total_dex":   8300000},
+          {"strike": 77.5,  "call_dex":  12180000, "put_dex":  -6110000, "total_dex":   6070000},
+          {"strike": 80.0,  "call_dex":  22260000, "put_dex":  -6880000, "total_dex":  15380000},
+          {"strike": 82.5,  "call_dex":  70780000, "put_dex":  -3990000, "total_dex":  66790000},
+          {"strike": 85.0,  "call_dex":  56650000, "put_dex":  -2820000, "total_dex":  53820000},
+          {"strike": 87.5,  "call_dex":  34210000, "put_dex":   -124000, "total_dex":  34090000},
+          {"strike": 90.0,  "call_dex":  18800000, "put_dex":   -522000, "total_dex":  18270000}
+        ]
+      },
+      "setup": "**综合评分：+4 / 看多** | 2026-07-15\n\n**看多信号（3项）**\n- MACD 金叉确认：MACD线高于信号线，柱状图为正（+0.02），短线动能延续\n- 均线多头排列：价格（$83.00）> SMA50（$80.58）> SMA200（$74.92），黄金交叉格局完整\n- 看涨形态：近10日出现 CDLHARAMI_BULL 孕线看涨形态，短线止跌信号\n\n**中性指标（5项）**：RSI 55.3 · 布林带内（上轨 $85.16 / 下轨 $78.78）· ADX 18.28 区间震荡 · OBV 无方向偏差 · Stoch 53.59\n\n**期权结构（2026-09-18 到期）**\n- GEX：**多头Gamma区间**（净GEX +22.87M），现价 $83.00 高于Gamma翻转位 $78.45（+5.56%），做市商正Gamma抑制波动，有利于区间震荡偏多\n- Call Wall（阻力）：$82.50（同时为最大Gamma行权价，价格磁吸效应强，临近到期日趋向此价位）\n- Put Wall（支撑）：$77.50\n- DEX净多：+202.73M，做市商持净多Delta，结构整体偏多\n- P/C OI 比：0.17，看涨持仓量远超看跌，市场乐观情绪明显\n\n**关键价位**\n- 短线支撑：$82.50（最大Gamma磁吸）→ $80.00 → $78.45（Gamma翻转警戒线）\n- 短线阻力：$85.00 → $87.50 → $90.00\n- 破位警戒：收盘跌破 $78.45 则结构转空\n\n**情景推演（1-4周）**\n- 上行：突破并站稳 $85 → 目标 $87.50～$90\n- 区间：在 $80～$87.50 区间震荡，$82.50 磁吸效应主导\n- 下行：跌破 $80 确认 → 考验 $77.50 Put Wall\n\n**仓位建议**：RSI中性（55.3）未过热，ADX弱（18.28）趋势不强；建议轻仓偏多，以 $80 为止损参考，等待突破 $85 后顺势加仓。"
+    },
+    "QQQ": {
+      "quote": {
+        "price": 713.03,
+        "change": -6.66,
+        "change_pct": -0.93,
+        "volume": 19452188,
+        "updated": "7/15/2026, 5:00:02 PM"
+      },
+      "gex": {
+        "spot": 713.88,
+        "expiry": "2026-09-18",
+        "net_gex": 4810000,
+        "flip_level": 714.10,
+        "max_gamma_strike": 700.0,
+        "call_wall": 710.0,
+        "put_wall": 700.0,
+        "put_call_oi": 1.01,
+        "put_call_vol": 0.99,
+        "regime": "mixed",
+        "strikes": [
+          {"strike": 680.0, "call_gex":  3740000, "put_gex":  -4400000, "total_gex":   -654000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 685.0, "call_gex":  3350000, "put_gex":  -3090000, "total_gex":    257000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 690.0, "call_gex":  5040000, "put_gex":  -6220000, "total_gex":  -1180000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 695.0, "call_gex":   644000, "put_gex":   -838000, "total_gex":   -194000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 700.0, "call_gex":  6230000, "put_gex": -22700000, "total_gex": -16470000, "call_wall": false, "put_wall": true,  "max_gamma": true},
+          {"strike": 705.0, "call_gex":  1650000, "put_gex":  -2280000, "total_gex":   -630000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 710.0, "call_gex": 12350000, "put_gex":  -3430000, "total_gex":   8920000, "call_wall": true,  "put_wall": false, "max_gamma": false},
+          {"strike": 715.0, "call_gex":  2000000, "put_gex":  -3950000, "total_gex":  -1950000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 720.0, "call_gex":  4170000, "put_gex":  -2340000, "total_gex":   1830000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 725.0, "call_gex":  2610000, "put_gex":  -1440000, "total_gex":   1160000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 730.0, "call_gex":  3550000, "put_gex":  -1460000, "total_gex":   2090000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 735.0, "call_gex":  2810000, "put_gex":  -1850000, "total_gex":    959000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 740.0, "call_gex":  5190000, "put_gex":  -1110000, "total_gex":   4080000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 745.0, "call_gex":  1540000, "put_gex":  -1430000, "total_gex":    110000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 750.0, "call_gex":  5940000, "put_gex":  -1390000, "total_gex":   4550000, "call_wall": false, "put_wall": false, "max_gamma": false}
+        ]
+      },
+      "dex": {
+        "net_dex": 3600000000,
+        "top_positive": 710.0,
+        "top_negative": 700.0,
+        "strikes": [
+          {"strike": 680.0, "call_dex":  522010000, "put_dex": -266580000, "total_dex":  255430000},
+          {"strike": 685.0, "call_dex":  452230000, "put_dex": -201660000, "total_dex":  250580000},
+          {"strike": 690.0, "call_dex":  656160000, "put_dex": -433810000, "total_dex":  222350000},
+          {"strike": 695.0, "call_dex":   80790000, "put_dex":  -62690000, "total_dex":   18100000},
+          {"strike": 700.0, "call_dex":  748550000, "put_dex":-1820000000, "total_dex":-1070000000},
+          {"strike": 705.0, "call_dex":  157970000, "put_dex": -162320000, "total_dex":   -4360000},
+          {"strike": 710.0, "call_dex": 1120000000, "put_dex": -259920000, "total_dex":  861950000},
+          {"strike": 715.0, "call_dex":  171730000, "put_dex": -319430000, "total_dex": -147700000},
+          {"strike": 720.0, "call_dex":  411420000, "put_dex": -237140000, "total_dex":  174280000},
+          {"strike": 725.0, "call_dex":  243340000, "put_dex": -154050000, "total_dex":   89290000},
+          {"strike": 730.0, "call_dex":  311950000, "put_dex": -163840000, "total_dex":  148110000},
+          {"strike": 735.0, "call_dex":  231440000, "put_dex": -217890000, "total_dex":   13550000},
+          {"strike": 740.0, "call_dex":  398560000, "put_dex": -137510000, "total_dex":  261040000},
+          {"strike": 745.0, "call_dex":  109430000, "put_dex": -184090000, "total_dex":  -74660000},
+          {"strike": 750.0, "call_dex":  389490000, "put_dex": -186900000, "total_dex":  202590000}
+        ]
+      },
+      "setup": "**综合评分：-2 / 中性偏空** | 2026-07-15\n\n**看空/警示信号（2项）**\n- MACD 死叉：MACD线低于信号线（柱状图 -1.34），短线下行动能明显\n- 蜡烛图偏空：近10日出现4个空头形态 vs 1个多头形态，最新为 CDLHARAMI_BULL 日内反弹参考信号\n\n**中性指标（6项）**：RSI 48.88（中性偏弱）· 布林带 Squeeze（带宽5.35%，随时突破）· ADX 15.54 区间震荡 · SMA50/200混合排列（收盘 $714.87 < SMA50 $718.01）· OBV 无方向偏差 · Stoch 38.03\n\n**期权结构（2026-09-18 到期）**\n- GEX：**混合区间**，现价 $713.03 低于Gamma翻转位 $714.10（差值仅 $1.07），整体净GEX仍为正（+4.81M）\n- 关键风险：若跌破 $714.10 翻转位，做市商将转为净空头Gamma，市场波动将被放大\n- Call Wall（阻力）：$710.00（Call Wall低于现价，说明上行阻力紧贴现价）\n- Put Wall + 最大Gamma：$700.00（主要下行磁吸位，做市商大量持仓集中区）\n- P/C OI 比：1.01，看跌/看涨持仓量几乎1:1，市场双向博弈激烈\n- DEX：$700 行权价存在巨量空头Delta（-1.07B），为关键对冲支撑位；$710 为最大正Delta（+861.95M）\n\n**关键价位**\n- 核心阻力：$714.10（Gamma翻转位）→ $718.01（SMA50）→ $720\n- 核心支撑：$710.00（Call Wall / 正Delta集中）→ $700.00（Put Wall + 最大Gamma）\n- 布林带收窄（带宽5.35%），随时面临方向性突破\n\n**情景推演（1-4周）**\n- 上行：收复 $714.10 并站稳SMA50 $718 → 目标 $725～$730\n- 区间：在 $700～$714 区间震荡，$700 提供强支撑\n- 下行：跌破 $710 → 考验 $700 强支撑；若 $700 破位则空头加速\n\n**仓位建议**：现价处于Gamma翻转位附近，方向不明确；建议观望或对冲；看空者可考虑 $700 Put保护；等待明确突破 $714 翻转位后再顺势操作。"
+    },
+    "SPY": {
+      "quote": {
+        "price": 751.87,
+        "change": 0.04,
+        "change_pct": 0.01,
+        "volume": 19427496,
+        "updated": "7/15/2026, 5:00:02 PM"
+      },
+      "gex": {
+        "spot": 752.61,
+        "expiry": "2026-09-18",
+        "net_gex": 72910000,
+        "flip_level": 752.03,
+        "max_gamma_strike": 750.0,
+        "call_wall": 750.0,
+        "put_wall": 710.0,
+        "put_call_oi": 0.66,
+        "put_call_vol": 1.51,
+        "regime": "mixed",
+        "strikes": [
+          {"strike": 745.0, "call_gex": 11420000, "put_gex":  -2850000, "total_gex":   8570000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 746.0, "call_gex":   247000, "put_gex":  -1010000, "total_gex":   -762000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 747.0, "call_gex":   748000, "put_gex":  -1310000, "total_gex":   -566000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 748.0, "call_gex":   666000, "put_gex":   -461000, "total_gex":    205000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 749.0, "call_gex":   809000, "put_gex":   -543000, "total_gex":    266000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 750.0, "call_gex": 25160000, "put_gex": -13720000, "total_gex":  11430000, "call_wall": true,  "put_wall": false, "max_gamma": true},
+          {"strike": 752.0, "call_gex":   577000, "put_gex":   -568000, "total_gex":      9000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 753.0, "call_gex":   417000, "put_gex":   -715000, "total_gex":   -298000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 754.0, "call_gex":   371000, "put_gex":   -482000, "total_gex":   -111000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 755.0, "call_gex": 10640000, "put_gex":  -3900000, "total_gex":   6740000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 756.0, "call_gex":   583000, "put_gex":   -418000, "total_gex":    166000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 757.0, "call_gex":   781000, "put_gex":   -234000, "total_gex":    547000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 758.0, "call_gex":   414000, "put_gex":   -130000, "total_gex":    284000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 759.0, "call_gex":   325000, "put_gex":   -370000, "total_gex":    -45000, "call_wall": false, "put_wall": false, "max_gamma": false},
+          {"strike": 760.0, "call_gex":  8530000, "put_gex":  -4580000, "total_gex":   3950000, "call_wall": false, "put_wall": false, "max_gamma": false}
+        ]
+      },
+      "dex": {
+        "net_dex": 6520000000,
+        "top_positive": 730.0,
+        "top_negative": 709.0,
+        "strikes": [
+          {"strike": 745.0, "call_dex":  734870000, "put_dex": -133080000, "total_dex":  601790000},
+          {"strike": 746.0, "call_dex":   15690000, "put_dex":  -48110000, "total_dex":  -32420000},
+          {"strike": 747.0, "call_dex":   46700000, "put_dex":  -63920000, "total_dex":  -17220000},
+          {"strike": 748.0, "call_dex":   40910000, "put_dex":  -22910000, "total_dex":   18000000},
+          {"strike": 749.0, "call_dex":   48880000, "put_dex":  -27520000, "total_dex":   21360000},
+          {"strike": 750.0, "call_dex": 1340000000, "put_dex": -639500000, "total_dex":  703830000},
+          {"strike": 752.0, "call_dex":   29730000, "put_dex":  -27560000, "total_dex":    2170000},
+          {"strike": 753.0, "call_dex":   21060000, "put_dex":  -35390000, "total_dex":  -14340000},
+          {"strike": 754.0, "call_dex":   18370000, "put_dex":  -24360000, "total_dex":   -6000000},
+          {"strike": 755.0, "call_dex":  516020000, "put_dex": -201050000, "total_dex":  314980000},
+          {"strike": 756.0, "call_dex":   27710000, "put_dex":  -21930000, "total_dex":    5780000},
+          {"strike": 757.0, "call_dex":   36250000, "put_dex":  -12550000, "total_dex":   23700000},
+          {"strike": 758.0, "call_dex":   24300000, "put_dex":   -8620000, "total_dex":   15690000},
+          {"strike": 759.0, "call_dex":   18740000, "put_dex":  -24860000, "total_dex":   -6120000},
+          {"strike": 760.0, "call_dex":  484000000, "put_dex": -312390000, "total_dex":  171610000}
+        ]
+      },
+      "setup": "**综合评分：0 / 中性** | 2026-07-15\n\n**多空信号均衡**\n- 看多（2项）：MACD 金叉（柱状图 +0.58），价格（$751.29）> SMA50（$743.27）> SMA200（$695.83），黄金交叉格局完整\n- 看空（2项）：随机指标 K=89 超买（>80）；近10日6个空头形态 vs 2个多头（最新：Dark Cloud Cover 看空吞没信号）\n\n**中性指标（4项）**：RSI 55.56 中性 · 布林带 Squeeze（带宽3.8%）· ADX 18.42 区间震荡 · OBV 无方向偏差\n\n**期权结构（2026-09-18 到期）**\n- GEX：**混合区间**，现价 $751.87 低于Gamma翻转位 $752.03（差值仅 $0.16），整体净GEX +72.91M（极高正Gamma）\n- 做市商在 $750 附近持有大量正Gamma头寸，整体低波动抑制状态，但翻转位近在咫尺\n- Call Wall + 最大Gamma：$750.00（价格强磁吸位，市场围绕此价位反复震荡）\n- Put Wall（支撑）：$710.00\n- DEX净多：+6.52B，顶部正Delta集中在 $730（做市商在 $730 以下持有大量多头Delta）\n- 布林带极度收窄（带宽3.8%），波动率压缩至极值，大方向突破随时可能发生\n\n**关键价位**\n- 核心磁力位：$750.00（最大Gamma + Call Wall，多空分界）\n- 短线阻力：$752.03（Gamma翻转）→ $755.00 → $758～$760\n- 短线支撑：$749.00 → $745.00 → $730.00（DEX最大正Delta集中区）\n- 极限支撑：$710.00（Put Wall）\n\n**情景推演（1-4周）**\n- 上行：站稳 $752.03 翻转位后 → 在 $750～$760 区间缓慢上行（Gamma压缩）；突破 $760 则加速\n- 区间：在 $745～$755 之间窄幅震荡（3.8%布林带挤压），$750 磁吸效应主导\n- 下行：跌破 $749 → 回测 $745 → $730；超买信号叠加看空蜡烛形态增加下行概率\n\n**仓位建议**：多空均衡，$750 是核心磁力位；超买叠加空头蜡烛建议短线谨慎追多；等待 $752 翻转位明确站稳后加仓多头；或在 $749 以下布置 Put 对冲持仓。"
+    }
+  }
+}
