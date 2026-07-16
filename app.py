@@ -58,6 +58,9 @@ def load_history() -> list[dict]:
             ts_str = snap.get("generated_at", "")
             try:
                 dt = datetime.fromisoformat(ts_str)
+                if dt.tzinfo is not None:
+                    from datetime import timezone
+                    dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
             except Exception:
                 continue
             for ticker, td in snap.get("tickers", {}).items():
